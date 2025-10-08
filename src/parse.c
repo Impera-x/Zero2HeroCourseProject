@@ -141,6 +141,11 @@ int read_employees(int fd, struct dbheader_t * dbhdr, struct employee_t **employ
 }
 
 int add_employee(struct dbheader_t *dbhdr, struct employee_t *employees, char *addstring) {
+    if (dbhdr == NULL || employees == NULL || addstring == NULL) {
+        printf("Invalid parameters\n");
+
+        return STATUS_ERROR;
+    }
     printf("%s\n", addstring);
 
     char* name = strtok(addstring, ",");

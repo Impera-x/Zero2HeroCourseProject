@@ -10,7 +10,7 @@
 #include "parse.h"
 
 int create_db_header(struct dbheader_t **headerOut) {
-    if (*headerOut == NULL) {
+    if (headerOut == NULL) {
         printf("Invalid header pointer\n");
 
         return STATUS_ERROR;
